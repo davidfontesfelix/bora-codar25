@@ -9,21 +9,21 @@ type MyContextProviderProps = {
   children: React.ReactNode
 }
 
-const MyContext = createContext<MyContextType>({
+const MyContextPlayOrPause = createContext<MyContextType>({
   playOrPause: false,
   setPlayOrPause: () => {},
 })
 
-export const MyContextProvider: React.FC<MyContextProviderProps> = ({
+export const MyContextPlayProvider: React.FC<MyContextProviderProps> = ({
   children,
 }) => {
   const [playOrPause, setPlayOrPause] = useState<boolean>(false)
 
   return (
-    <MyContext.Provider value={{ playOrPause, setPlayOrPause }}>
+    <MyContextPlayOrPause.Provider value={{ playOrPause, setPlayOrPause }}>
       {children}
-    </MyContext.Provider>
+    </MyContextPlayOrPause.Provider>
   )
 }
 
-export default MyContext
+export default MyContextPlayOrPause

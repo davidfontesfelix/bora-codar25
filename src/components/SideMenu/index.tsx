@@ -5,10 +5,12 @@ import accessibility from '../../assets/icons/accessibility-outline 1.svg'
 import albums from '../../assets/icons/albums-outline 1.svg'
 import search from '../../assets/icons/search-outline 1.svg'
 import { useContext } from 'react'
-import MyContext from '@/context/MyContextPlay'
+import MyContextPlayOrPause from '@/context/MyContextPlay'
+import MyContextShowSideMenu from '@/context/MyContextShowSideMenu'
 
 export default function SideMenu() {
-  const { playOrPause, setPlayOrPause } = useContext(MyContext)
+  const { playOrPause, setPlayOrPause } = useContext(MyContextPlayOrPause)
+  const { show } = useContext(MyContextShowSideMenu)
   function handlePlay() {
     if (playOrPause === false) {
       setPlayOrPause(true)
@@ -18,9 +20,9 @@ export default function SideMenu() {
   }
 
   return (
-    <div className={styles.sideMenu}>
+    <div className={styles.sideMenu} style={{ opacity: show ? '0' : '1' }}>
       <div className={styles.buttons}>
-        <ButtonsIcons src={play} onClick={handlePlay} />
+        <ButtonsIcons activated={playOrPause} src={play} onClick={handlePlay} />
         <ButtonsIcons src={accessibility} />
         <ButtonsIcons src={albums} />
         <ButtonsIcons src={search} />
