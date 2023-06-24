@@ -1,0 +1,8 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../assets/Background.png);
+  background-repeat: no-repeat;
+  transform: scale(1.25);
+  position: fixed;
+}

@@ -1,0 +1,13 @@
+.icons{
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ;
+}
+
+.icons:hover{
+  background: rgba(255, 255, 255, 0.20);
+  border-radius: 80px;
+}
