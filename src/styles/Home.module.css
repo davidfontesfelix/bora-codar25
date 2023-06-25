@@ -8,6 +8,16 @@
   position: absolute;
 }
 
+.background {
+  width: 105vw;
+  height: 105vh;
+  background-image: url(../assets/Background.png);
+  background-size: cover;
+  transform: scale(1.5);
+  position: fixed;
+
+}
+
 .main {
   display: grid;
   grid-template-areas:
